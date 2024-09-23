@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("https://www.globalcosmeticsnews.com/wp-content/uploads/2020/03/Fashion-.jpg");
+
+  min-height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  width: 30%;
+  padding: 16px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  display:inline;
+  width: 99.5%;
+  height: 10%;
+  padding: 15px;
+  margin: 10px 0 5px 0;
+  border: none;
+  background: #f1f1f1;
+  background-color: #ddd;
+  outline: none;
+}
+
+h3{
+  font-weight: bold;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+  <title>Sign Up</title>
+</head>
+<body>
+  <div class="bg-img">
+    <form method="post" class="container">
+      <b><h3>Sign Up</h3></b>
+      {% csrf_token %}
+      <p id="name">{{ form.first_name }}</p>
+      <p> {{ form.last_name }}</p>
+      <p> {{ form.email }}</p>
+      <p> {{ form.username}}</p>
+      <p> {{ form.password1 }}</p>
+      <p>{{ form.password2 }}</p>
+      <button type="submit" class="w3-button w3-light-grey w3-hover-dark-grey">Sign up</button>
+    </form>
+  </div>
+</body>
+</html>
